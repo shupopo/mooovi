@@ -17,13 +17,12 @@ public class Scraping {
 
     private static final String SITE_URL = "http://review-movie.herokuapp.com/";
 
-    private List<String> links = new ArrayList<String>();
-
     public void execute() throws IOException {
         System.out.println("execute scraping!");
     }
 
-    private void collectPageLink() throws IOException {
+    private List<String> collectPageLink() throws IOException {
+        return null;
     }
 
     private void saveProduct(String link) throws IOException {
