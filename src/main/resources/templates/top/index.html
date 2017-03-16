@@ -23,7 +23,7 @@
                     <div class="thumbnail__caption">
                         <h3 class="text-xsmall text-overflow" title="オオカミ少女と黒王子" th:text="${product.title}">オオカミ少女と黒王子</h3>
                         <p class="text-small">
-                            <span class="rating-star"><i th:classappend="'rate-' + ${T(techcamp.java.mooovi.util.ReviewUtil).averageRate(product.reviews)} + '0'" class="star-actived"></i></span>
+                            <span class="rating-star"><i th:classappend="'rate-' + /* [ここに星の数を表示] */ + '0'" class="star-actived"></i></span>
                         </p>
                     </div>
                 </li>
