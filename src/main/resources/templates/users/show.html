@@ -11,7 +11,7 @@
     <header class="user_page-header">
         <div class="yjContainer">
             <a href="">
-                <div class="user_image"><img th:src="@{'/user/' + ${user.id} + '/profile-image.jpg'}" src="/avatars/original/missing.png" alt="Missing" /></div>
+                <div class="user_image"><img th:src="@{'/users/' + ${user.id} + '/profile-image.jpg'}" src="/avatars/original/missing.png" alt="Missing" /></div>
                 <h2 th:inline="text">[[${user.nickname}]] <span>さんのマイページ</span></h2>
             </a>
         </div>
