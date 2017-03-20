@@ -18,7 +18,7 @@ public class ScrapingDetailImages {
     }
 
     public static List<String> collectPageLink() throws IOException {
-        List<String> links = new ArrayList<String>();
+        List<String> links = new ArrayList<>();
         // 個別ページのリンクをリストに追加する
         return links;
     }
