@@ -7435,3 +7435,23 @@ input, textarea {
         opacity: 1;
     }
 }
+
+.globalnav__menu > ul > li > form{
+    margin: 0;
+}
+
+.globalnav__menu > ul > li > form > input{
+    vertical-align: middle;
+    color: #f2f4f8;
+    background-color: #0e347b;
+    border: none;
+    border-radius: 2px;
+    margin-top: 11px;
+    padding: 8px 15px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.globalnav__menu > ul > li > form > input:hover{
+    background-color: #3e5c95;
+}
