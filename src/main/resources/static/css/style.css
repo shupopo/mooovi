@@ -7436,11 +7436,11 @@ input, textarea {
     }
 }
 
-.globalnav__menu > ul > li > form{
+.globalnav__menu>ul>li>form{
     margin: 0;
 }
 
-.globalnav__menu > ul > li > form > input{
+.globalnav__menu>ul>li>form>input{
     vertical-align: middle;
     color: #f2f4f8;
     background-color: #0e347b;
@@ -7452,6 +7452,6 @@ input, textarea {
     line-height: 1;
 }
 
-.globalnav__menu > ul > li > form > input:hover{
+.globalnav__menu>ul>li>form>input:hover{
     background-color: #3e5c95;
 }
