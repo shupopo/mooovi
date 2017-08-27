@@ -29,15 +29,13 @@
             </header>
             <ul style="padding: 0">
 
-                <li th:each="'[ここを編集]' : '[ここを編集]'" style="border-bottom: dotted 1px">
+			<li th:each="review : ${product.reviews}" style="border-bottom: dotted 1px">
                     <div class="thumbnail__caption">
                         <h3 class="text-xsmall text-overflow" title="mori">
-                            <span><i class="icon-rate-60 text-xxsmall opacity-60" title=""></i></span><span th:text="'[ここを編集]'">ニックネーム</span>
-                        </h3>
+                        <span><i class="icon-rate-60 text-xxsmall opacity-60" title=""></i></span><span th:text="${review.nickname}">ニックネーム</span></h3>
                         <p class="text-small">
-                            <span class="rating-star"><i th:classappend="'rate-' + '[ここに星の数を表示]' + '0'" class="star-actived"></i></span>
-                        </p>
-                        <p th:text="'[ここを編集]'">おもしろい</p>
+					<span class="rating-star"><i th:classappend="'rate-' + ${review.rate} + '0'" class="star-actived"></i></span>                        </p>
+       		 <p th:text="${review.comment}">おもしろい</p>
                     </div>
                 </li>
 

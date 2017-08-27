@@ -24,5 +24,4 @@ public class ScrapingApplication implements CommandLineRunner{
         SpringApplication.run(ScrapingApplication.class, args);
         System.exit(0);
     }
-
 }

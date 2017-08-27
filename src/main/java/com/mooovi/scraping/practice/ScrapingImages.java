@@ -18,10 +18,10 @@ public class ScrapingImages {
     }
 
     public static void scraping() throws IOException {
-    	Document document = Jsoup.connect("http://review-movie.herokuapp.com/").get();  // ①
-        Elements elements = document.select(".poster_link img");  // ②
-        for(Element element : elements){  // ③
-            System.out.println(element.attr("src"));  // ④
+    	Document document = Jsoup.connect("http://review-movie.herokuapp.com/").get();  
+        Elements elements = document.select(".poster_link img");  
+        for(Element element : elements){  
+            System.out.println(element.attr("src"));  
         }
     }
 
