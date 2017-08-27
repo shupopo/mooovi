@@ -2,6 +2,10 @@ package com.mooovi.scraping.practice;
 
 import java.io.IOException;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 public class ScrapingPractice {
 
     public static void main(String[] args){
@@ -13,6 +17,11 @@ public class ScrapingPractice {
     }
 
     public static void scraping() throws IOException {
+    	
+    	 Document document = Jsoup.connect("https://app-mooovi.herokuapp.com/works/initial_scraping").get();
+    	 Elements elements = document.select("p");
+    	    System.out.println(elements);
+
     }
 
 }
