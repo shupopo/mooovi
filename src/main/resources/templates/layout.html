@@ -23,6 +23,7 @@
             <input type="submit" value="ログアウト" />
         </form>
     </li>
+        <li th:if="${loginUser != null}" class="entry_button" style="float: right"><a th:href="@{'/users/' + ${loginUser.userId}}" href="/users/1" >マイページ</a></li>
     <li class="entry_button" style="float: right"><a href="/products/search">投稿する</a></li>
 </ul>
                 </div>
