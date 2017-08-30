@@ -6,5 +6,7 @@ import com.mooovi.business.entity.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
+	
+    Product findByTitle(String title);
 
 }

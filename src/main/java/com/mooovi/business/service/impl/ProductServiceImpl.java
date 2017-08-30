@@ -19,5 +19,12 @@ public class ProductServiceImpl implements ProductService{
 	    public Product save(Product product){
 	        return productRepository.save(product);
 	    }
+	    
+	    @Override
+	    public Product findOneOrNew(String title){
+	        Product product = productRepository.findByTitle(title);
+	        if(product == null) product = new Product();
+	        return product;
+	    }
 
 }
