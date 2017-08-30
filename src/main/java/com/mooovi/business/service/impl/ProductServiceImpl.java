@@ -1,6 +1,8 @@
 package com.mooovi.business.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +27,17 @@ public class ProductServiceImpl implements ProductService{
 	        Product product = productRepository.findByTitle(title);
 	        if(product == null) product = new Product();
 	        return product;
+	    }
+	    
+
+	    @Override
+	    public Page<Product> findAll(Pageable pageable){
+	        return productRepository.findAll(pageable);
+	    }
+	    
+	    @Override
+	    public Product findOne(Long id){
+	        return productRepository.findOne(id);
 	    }
 
 }

@@ -75,10 +75,16 @@ public class Scraping {
         Document document = Jsoup.connect(link).get();  
         String title = document.select(".entry-title").first().text();  
         String imageUrl = document.select(".entry-content img").first().attr("src");  
-
+        String director = document.select(".review_details .director").first().text();  
+        String detail = document.select(".entry-content p").first().text();  
+        String openDate = document.select(".review_details .date span").first().text();  
+        
         Product product = productService.findOneOrNew(title); 
         product.setTitle(title);  
-        product.setImageUrl(imageUrl);  
+        product.setImageUrl(imageUrl);
+        product.setDirector(director);
+        product.setDetail(detail);
+        product.setOpenDate(openDate);
         productService.save(product);  
     }
 

@@ -1,5 +1,6 @@
 package com.mooovi.business.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +17,13 @@ public class Product {
     private String title;
 
     private String imageUrl;
+    
+    private String director;
+
+    @Column(columnDefinition="TEXT")
+    private String detail;
+
+    private String openDate;
 
 	public Long getId() {
 		return id;
@@ -39,6 +47,30 @@ public class Product {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public String getOpenDate() {
+		return openDate;
+	}
+
+	public void setOpenDate(String openDate) {
+		this.openDate = openDate;
 	}
 
     // ゲッターセッター省略
