@@ -1,5 +1,7 @@
 package com.mooovi.business.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,6 +40,11 @@ public class ProductServiceImpl implements ProductService{
 	    @Override
 	    public Product findOne(Long id){
 	        return productRepository.findOne(id);
+	    }
+	    
+	    @Override
+	    public List<Product> findAllByTitleLike(String keyword) {
+	        return productRepository.findAllByTitleLike("%" + keyword + "%");
 	    }
 
 }
