@@ -19,5 +19,5 @@ public interface ProductService {
     
     List<Product> findAllByTitleLike(String keyword);
 
-
+    Page<Product> findTop5();
 }
