@@ -1,9 +1,12 @@
 package com.mooovi.business.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +27,9 @@ public class Product {
     private String detail;
 
     private String openDate;
+    
+    @OneToMany(mappedBy = "product")
+    private List<Review> reviews;
 
 	public Long getId() {
 		return id;
@@ -72,7 +78,23 @@ public class Product {
 	public void setOpenDate(String openDate) {
 		this.openDate = openDate;
 	}
+	
+	public List<Review> getReviews() {
+	    return reviews;
+	}
 
+	public void setReviews(List<Review> reviews) {
+	    this.reviews = reviews;
+	}
+	
+    public int averageRate(){
+        double sum = 0;  // ①
+        for(Review review : reviews){  // ②
+            sum += review.getRate();  // ③
+        }
+        double average = reviews.size() == 0 ? 0 : sum / reviews.size();  // ④
+        return (int) Math.round(average);  // ⑤
+    }
     // ゲッターセッター省略
 
 }

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +23,9 @@ public class Review {
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String comment;
+    
+    @ManyToOne
+    private Product product;
 
 	public Long getId() {
 		return id;
@@ -54,6 +58,16 @@ public class Review {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
+	public Product getProduct() {
+	    return product;
+	}
+
+	public void setProduct(Product product) {
+	    this.product = product;
+	}
+
+
 
 
 }
