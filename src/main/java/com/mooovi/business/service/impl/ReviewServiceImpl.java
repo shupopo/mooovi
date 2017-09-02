@@ -12,6 +12,7 @@ import com.mooovi.business.repository.ProductRepository;
 import com.mooovi.business.repository.ReviewRepository;
 import com.mooovi.business.service.ProductService;
 import com.mooovi.business.service.ReviewService;
+import com.mooovi.business.service.UserService;
 
 @Service
 @Transactional
@@ -20,16 +21,19 @@ public class ReviewServiceImpl implements ReviewService{
     @Autowired 
     private ReviewRepository reviewRepository;
     
-    
+    @Autowired
+    private UserService userService;
     
     @Autowired
     private ProductService productService;
 
     @Override
-    public void save(Review review, Long productId) {
+    public void save(Review review, Long productId, Long userId) {
         review.setProduct(productService.findOne(productId));
+        review.setUser(userService.findOne(userId));
         reviewRepository.save(review);
     }
+
     
   
 

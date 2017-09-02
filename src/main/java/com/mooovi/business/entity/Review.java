@@ -15,8 +15,8 @@ public class Review {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
-    private String nickname;
+//    @Column(nullable = false)
+//    private String nickname;
 
     @Column(nullable = false)
     private Integer rate;
@@ -26,6 +26,10 @@ public class Review {
     
     @ManyToOne
     private Product product;
+    
+    @ManyToOne
+    private User user;
+
 
 	public Long getId() {
 		return id;
@@ -35,13 +39,13 @@ public class Review {
 		this.id = id;
 	}
 
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+//	public String getNickname() {
+//		return nickname;
+//	}
+//
+//	public void setNickname(String nickname) {
+//		this.nickname = nickname;
+//	}
 
 	public Integer getRate() {
 		return rate;
@@ -67,6 +71,13 @@ public class Review {
 	    this.product = product;
 	}
 
+	public User getUser() {
+	    return user;
+	}
+
+	public void setUser(User user) {
+	    this.user = user;
+	}
 
 
 

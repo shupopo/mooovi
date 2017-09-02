@@ -35,11 +35,11 @@
                         </li>
                     </ul>
                 </div>
-                <div style="margin: 8px 0">
+ <!--                <div style="margin: 8px 0">
                     <label style="margin-right: 8px">ニックネーム</label>
                     <input th:field="*{nickname}" name="nickname" placeholder="ニックネーム" type="text" value="" />
                     <span th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}" class="help-block">error!</span>
-                </div>
+                </div> -->
                 <div style="margin: 8px 0">
                     <label style="margin-right: 8px">評価</label>
                     <input th:field="*{rate}" th:errorclass="error-field" class="search__query" name="rate" placeholder="評価" style="text-align: right" type="number" max="10" min="1" value="1" /> (10段階評価)

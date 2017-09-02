@@ -1,9 +1,12 @@
 package com.mooovi.business.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +25,9 @@ public class User {
 
     @Column(nullable = false)
     private String nickname;
+    
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;
 
 	public Long getId() {
 		return id;
@@ -53,6 +59,14 @@ public class User {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	
+	public List<Review> getReviews() {
+	    return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+	    this.reviews = reviews;
 	}
 
     // ゲッターセッター省略

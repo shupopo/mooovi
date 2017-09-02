@@ -8,8 +8,8 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class ReviewForm {
 
-    @NotBlank
-    private String nickname;
+//    @NotBlank
+//    private String nickname;
 
     @NotNull
     @Min(1)
@@ -19,13 +19,13 @@ public class ReviewForm {
     @NotBlank
     private String comment;
 
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+//	public String getNickname() {
+//		return nickname;
+//	}
+//
+//	public void setNickname(String nickname) {
+//		this.nickname = nickname;
+//	}
 
 	public Integer getRate() {
 		return rate;

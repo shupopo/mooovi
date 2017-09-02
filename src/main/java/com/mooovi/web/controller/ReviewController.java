@@ -4,6 +4,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +17,7 @@ import com.mooovi.business.entity.Product;
 import com.mooovi.business.entity.Review;
 import com.mooovi.business.service.ProductService;
 import com.mooovi.business.service.ReviewService;
+import com.mooovi.security.LoginUserDetails;
 import com.mooovi.web.form.ReviewForm;
 
 
@@ -42,15 +44,14 @@ public class ReviewController {
     public String createReview(@PathVariable Long productId,
                                @Validated ReviewForm form,
                                BindingResult result,
-                               Model model) {
+                               Model model,
+                               @AuthenticationPrincipal LoginUserDetails loginUserDetails) {
         if (result.hasErrors()) {
             return newReview(productId, form, model);
         }
-
-        // フォームクラスからエンティティクラスへのマッピング
         Review review = new Review();
         BeanUtils.copyProperties(form, review);
-        reviewService.save(review, productId);
+        reviewService.save(review, productId, loginUserDetails.getUserId());
         return "redirect:/";
     }
 
