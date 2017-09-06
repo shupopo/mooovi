@@ -8,8 +8,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class UserForm implements Serializable{
-//ビューと紐付けるためのクラス
-//エンティティはあくまでテーブルのレコードに対応する
+
     @NotBlank
     @Email
     private String email;
