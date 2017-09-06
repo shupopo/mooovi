@@ -15,7 +15,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Product findByTitle(String title);
 
     List<Product> findAllByTitleLike(String keyword);
-    
 
     	@Query("SELECT r.product FROM Review r GROUP BY r.product ORDER BY COUNT(r.product) DESC")
     	Page<Product> findTop(Pageable pageable);
