@@ -2,6 +2,9 @@ package com.mooovi.business.service.impl;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +22,9 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Autowired
     private ProductRepository productRepository;
+	
+	@PersistenceContext
+	EntityManager entityManager;
 
     @Override
     public Product save(Product product){
@@ -45,7 +51,8 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
     public List<Product> findAllByTitleLike(String keyword) {
-        return productRepository.findAllByTitleLike("%" + keyword + "%");
+        //return productRepository.findAllByTitleLike("%" + keyword + "%");
+		return entityManager.createQuery("SELECT p FROM Product p WHERE p.title LIKE '%" + keyword + "%'", Product.class).getResultList();
     }
 	
 	@Override
