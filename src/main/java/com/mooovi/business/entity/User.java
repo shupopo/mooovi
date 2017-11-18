@@ -49,8 +49,6 @@ public class User {
     
     private String profileImage;
 
-    
-
 	public Long getId() {
 		return id;
 	}

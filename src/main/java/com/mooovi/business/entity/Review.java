@@ -17,32 +17,30 @@ import javax.persistence.Table;
 //import javax.persistence.Temporal;
 //import javax.persistence.TemporalType;
 
-
 @Entity
 @Table(name = "reviews")
 public class Review {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-    
-//    @Column(nullable = false)
-//    private String nickname;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @Column(nullable = false)
-    private Integer rate;
+	// @Column(nullable = false)
+	// private String nickname;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String comment;
-    
-    @ManyToOne
-    private Product product;
-    
-    @ManyToOne
-    private User user;
+	@Column(nullable = false)
+	private Integer rate;
 
+	@Column(nullable = false, columnDefinition = "TEXT")
+	private String comment;
 
-    public Long getId() {
+	@ManyToOne
+	private Product product;
+
+	@ManyToOne
+	private User user;
+
+	public Long getId() {
 		return id;
 	}
 
@@ -50,13 +48,13 @@ public class Review {
 		this.id = id;
 	}
 
-//	public String getNickname() {
-//		return nickname;
-//	}
-//
-//	public void setNickname(String nickname) {
-//		this.nickname = nickname;
-//	}
+	// public String getNickname() {
+	// return nickname;
+	// }
+	//
+	// public void setNickname(String nickname) {
+	// this.nickname = nickname;
+	// }
 
 	public Integer getRate() {
 		return rate;
@@ -73,23 +71,21 @@ public class Review {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
+
 	public Product getProduct() {
-	    return product;
+		return product;
 	}
 
 	public void setProduct(Product product) {
-	    this.product = product;
+		this.product = product;
 	}
-	
+
 	public User getUser() {
-        return user;
-    }
+		return user;
+	}
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 }
